@@ -19,6 +19,23 @@
 
 #include "quakedef.h"
 
+
+void Sys_SetFPCW (void)
+{
+}
+
+void Sys_PushFPCW_SetHigh (void)
+{
+}
+
+void Sys_PopFPCW (void)
+{
+}
+
+void MaskExceptions (void)
+{
+}
+
 int nostdout = 0;
 
 char *basedir = ".";

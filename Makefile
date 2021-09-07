@@ -13,10 +13,10 @@ BIN_DIR		:= bin
 
 # compiler flags
 CC		:= gcc
-CFLAGS		+= -Dstricmp=strcasecmp -O3
-DEBUG_CFLAGS	+= -Dstricmp=strcasecmp -g
-LDFLAGS		+= -lm -ldl -no-pie
-ASFLAGS		:= -DELF -x assembler-with-cpp
+CFLAGS		:= -m32 -Dstricmp=strcasecmp -O3
+DEBUG_CFLAGS	:=  -m32 -Dstricmp=strcasecmp -g
+LDFLAGS		:= -lm -ldl
+#ASFLAGS		:= -DELF -x assembler-with-cpp -no-pie
 
 # target
 TARGET		:= $(BUILD_DIR)/$(BIN_DIR)/$(BIN_FILE)
@@ -26,7 +26,7 @@ OBJS		:= $(addprefix $(BUILD_DIR)/$(OBJS_DIR)/, \
 		   cmd.o common.o console.o crc.o cvar.o host.o host_cmd.o iplog.o banlog.o mathlib.o \
 		   model.o net_dgrm.o net_loop.o net_main.o net_udp.o net_bsd.o pr_cmds.o pr_edict.o \
 		   pr_exec.o r_main.o security.o sv_main.o sv_phys.o sv_move.o sv_user.o zone.o wad.o \
-		   world.o sys_linux.o math.o worlda.o sys_a.o)
+		   world.o sys_linux.o)
 
 .PHONY: debug release build_debug build_release all
 

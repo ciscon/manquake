@@ -44,7 +44,8 @@ void BOPS_Error (void)
 }
 
 
-#if	!id386
+#if	!alwaysdefine
+//#if	!id386
 
 /*
 ==================
